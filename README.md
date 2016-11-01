@@ -1,18 +1,14 @@
+# MarkerWebControl
+
+This is a fork of Duet Web Control, a web interface for Duet-based 3D printers. This fork customizes the web interface for our marker, a [Borries 320-DP](http://borries.com/images/content/Broschueren/BORRIES_ProdKatalog_RitzNadel_DT_0812_FINALMAIL.pdf).
+
 # DuetWebControl
 
 Duet Web Control is a fully-responsive HTML5-based web interface for RepRapFirmware which utilizes the Bootstrap framework, JQuery and a few other libraries to allow easy control of Duet-based 3D printer electronics.
 
 It is designed to communicate with RepRapFirmware using HTTP GET requests and to upload single files using an HTTP POST request. One goal of the core application is to keep things compact, so a good loading speed can be achieved even on slow networks. Another one is to communicate to the firmware using only AJAX calls, which either return JSON objects, plain texts or binary blobs.
 
-Duet Web Control is free software; it is licensed under the terms of the GNU Public License v2.
-
-## Supported electronics
-
-At this time the following platforms are supported:
-
-* Duet 0.6
-* Duet 0.8.5
-* Duet WiFi
+Duet Web Control is free software; it is licensed under the terms of the GNU Public License v2, and so is MarkerWebControl.
 
 ## Communication to the firmware
 
@@ -76,19 +72,6 @@ Create a new directory. Returns {"err":[code]} with code being 0 if the director
 
 #### rr_config
 Get the configuration response. Some printer information do not need to be requested for regular usag but to obtain machine properties and firmware versions this request can be used.
-
-## Building Duet Web Control
-
-The final file structure of a Duet Web Control package may differ from the structure in the "core" directory. For example, the Duet WiFi has a filename length limit of 32 characters, so the existing paths must be adjusted to meet this limitation. Apart from that, it may be required to compress the target files for webservers that cannot send source files in parallel. In addition, web files on the Duet are not stored in sub-directories, so the paths must be changed for this board as well.
-
-For these purposes a build script has been introduced which can be run on Linux (and possibly OS X). To do so, open a terminal in the DWC root directory and run `./build.sh`. Refer to the build script header to see which other tools you will need.
-
-Once the script has completed, you should get two files:
-
-- DuetWebControl-$VERSION.bin (SPIFFS image for Duet WiFi)
-- DuetWebControl-$VERSION.zip (ZIP package for first-generation Duets)
-
-These packages can be uploaded via Duet Web Control to update the web interface. Due to the extra compression on the Duet WiFi, it is recommended to test new features on first-generation Duets first.
 
 ## Internationalization
 
