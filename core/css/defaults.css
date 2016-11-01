@@ -1070,3 +1070,81 @@ label[for="dropdown_language"] {
 .popover-content {
 	padding: 6px;
 }
+
+/*
+ * Customisations for marker
+ */
+
+/* head movement: hide z axis */
+#table_move_head > tbody > tr:nth-child(3) {
+	display: none;
+}
+
+/* hide auto bed compensation */
+#btn_bed_compensation {
+	display: none;
+}
+
+/* hide extruder control */
+#panel_extrude {
+	display: none;
+}
+
+/* hide extrusion factors */
+#page_print > div:nth-child(3) > div:nth-child(4) > div {
+	display: none;
+}
+
+/* hide machine status: extruder drives */
+#page_control > div > div:nth-child(2) > div:nth-child(3) > table:nth-child(3),
+#page_print > div:nth-child(3) > div:nth-child(3) > div:nth-child(3) > table:nth-child(3) {
+	display: none;
+}
+
+/* hide machine status: sensors */
+#page_control > div > div:nth-child(2) > div:nth-child(3) > table:nth-child(4),
+#page_print > div:nth-child(3) > div:nth-child(3) > div:nth-child(3) > table:nth-child(4) {
+	display: none;
+}
+
+/* hide machine status Z axis */
+#page_control > div > div:nth-child(2) > div:nth-child(3) > table:nth-child(2) > tbody > tr:nth-child(1) > th:nth-child(4),
+#page_print > div:nth-child(3) > div:nth-child(3) > div:nth-child(3) > table:nth-child(2) > tbody > tr:nth-child(1) > th:nth-child(4),
+#td_z {
+	display: none;
+}
+
+/* hide default heater temperatures */
+#page_listitems > div.col-md-4.col-lg-5 {
+	display: none;
+}
+
+/* hide default bed and chamber temperatures */
+#page_listitems > div.col-md-4.col-lg-3.col-right {
+	display: none;
+}
+
+/* hide settings -> file upload */
+#page_general > div.col-xs-12.col-sm-12.col-md-4.col-lg-4.col-left > div.panel.panel-default.hidden-xs.hidden-sm {
+	display: none;
+}
+
+/* hide settings -> tools tab */
+#frm_settings > ul.nav.nav-tabs.hidden-xs.hidden-sm > li:nth-child(6) {
+	display: none;
+}
+
+/* hide settings -> user interface -> fans */
+#page_ui > div:nth-child(2) > div:nth-child(1) {
+	display: none;
+}
+
+/* hide heater temperatures */
+#page_control > div > div:nth-child(2) > div:nth-child(1), #page_print > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) {
+	display: none;
+}
+
+/* hide temperature chart */
+#page_control > div > div:nth-child(2) > div:nth-child(2), #page_print > div:nth-child(3) > div:nth-child(3) > div:nth-child(2) {
+	display: none;
+}
