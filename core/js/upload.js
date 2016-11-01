@@ -20,8 +20,11 @@ var firmwareFileName = "RepRapFirmware";	// Name of the firmware file without .b
 
 function uploadTextFile(filename, content, callback) {
 	var file = new File([content], filename, { type: "application/octet-stream" });
+	// make multipart/form-data compatible
+	var data = new FormData();
+	data.append('file-1', file);
 	var uploadRequest = $.ajax("rr_upload?name=" + encodeURIComponent(filename), {
-		data: file,
+		data: data,
 		dataType: "json",
 		filename: filename.toLowerCase(),
 		processData: false,
@@ -257,8 +260,12 @@ function uploadNextFile() {
 	uploadRows[0].find(".glyphicon").removeClass("glyphicon-asterisk").addClass("glyphicon-cloud-upload");
 
 	// Begin another POST file upload
+
+	// make multipart/form-data compatible
+	var data = new FormData();
+	data.append('file-1', file);
 	uploadRequest = $.ajax("rr_upload?name=" + encodeURIComponent(targetPath), {
-		data: file,
+		data: data,
 		dataType: "json",
 		processData: false,
 		contentType: false,
