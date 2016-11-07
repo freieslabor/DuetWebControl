@@ -59,6 +59,7 @@ $(document).ready(function() {
 	disableControls();
 	resetGuiData();
 	updateGui();
+	moveMachineStatus();
 
 	loadSettings();
 	loadFileCache();
@@ -1142,6 +1143,8 @@ function showPage(name) {
 		}, 500);
 	}
 	currentPage = name;
+
+	moveMachineStatus();
 }
 
 
@@ -1188,4 +1191,16 @@ function getColorFromCSS(classname)
 	var color = ghostSpan.css("color");
 	ghostSpan.remove();
 	return color;
+}
+
+/* Move all panel status elements to the sidebar (on machine control and print
+ * status)
+ */
+function moveMachineStatus() {
+	var machineStatus = $(".panel-status");
+	if (currentPage == "control") {
+		machineStatus.prependTo($("#page_control > div > div:nth-child(2)"));
+	} else if (currentPage == "print") {
+		machineStatus.prependTo($("#page_print > div:nth-child(3) > div:nth-child(3)"));
+	};
 }
